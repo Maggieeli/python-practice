@@ -1,0 +1,22 @@
+import random
+choices = ['Rock','Paper','Scissors']
+
+while True:
+
+    # validate with another while loop
+    player_choice = input("Choose 'Rock','Paper', or 'Scissors'").lower()
+
+
+    comp_choice = random.choice(choices)
+    print(comp_choice)
+
+    if player_choice == comp_choice:
+        print("It's a tie!")
+    elif player_choice == 'paper' and comp_choice == 'rock':
+        print('Winner, Winner Chicken Dinner')
+    elif player_choice == 'Rock' and comp_choice == 'Scissors':
+        print('Winner, Winner Chicken Dinner')
+    elif player_choice == 'Scissors' and comp_choice == 'Paper':
+        print('Winner, Winner Chicken Dinner')
+    else:
+        print('You lost.')
