@@ -1,0 +1,14 @@
+qna = [
+    ("What color is the sky?\n a: brown\n b: blue\n c: red\n", "b"), 
+    ("what colour is poo?\n a: brown\n b: blue\n c:red\n",'a'),
+    ("What color is the grass?\n a: brown\n b: blue\n c:green\n", "c")
+]
+score = 0
+
+for question, answer in qna:
+    player_choice = input(question).lower() 
+    if player_choice == answer:
+        score += 1
+
+
+print("You got {0} out of 3".format(score))
