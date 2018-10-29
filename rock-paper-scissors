@@ -18,9 +18,8 @@ while True:
     elif player_choice == 'scissors' and comp_choice == 'paper':
         print('Winner, Winner Chicken Dinner')
         print(comp_choice)
-    elif player_choice != 'Scissors' or player_choice != 'Paper' or player_choice != 'Rock' or player_choice != 'scissors' or player_choice != 'paper' or player_choice != 'rock':
+    elif player_choice != 'scissors' and player_choice != 'paper' and player_choice !='rock':
         print('invalid')
     else:
+        print(comp_choice)
         print('You lost.')
-
-
