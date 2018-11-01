@@ -16,13 +16,17 @@ for celsius in range(-20,45,5):
 
 
 total = 0
-days = -1
+days = 0
 daily_amt = 0
 
-while daily_amt != -1:
+while True:
+    daily_amt = float(input("Enter a daily spent amount (-1 to stop):"))
+
+    if daily_amt == -1:
+        break
+
     days += 1
     total += daily_amt
-    daily_amt = float(input("Enter a daily spent amount (-1 to stop):"))
 
 print("Total Days travelled:", days)
 print("Total amount spent: $", total)
@@ -30,6 +34,6 @@ print("Total amount spent: $", total)
 if total > 250*days:
     tax = total * 0.13
     print("You owe a fee of $", tax)
-    
 else:
-  print("Phew, you do not owe a fee")
+    print("Phew, you do not owe a fee")
+
