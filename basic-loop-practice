@@ -25,3 +25,20 @@ print(total)
 
 # 3. Create a loop that will take user input, add all the even numbers, subtract all
 #    the odd numbers and stop when you input 'done'. 
+## if you add or subtract to a variable, variable must be assigned to 0 outside of the loop
+total = 0
+
+while True:
+    user_input = input("Enter a number, type 'done' to stop:")
+    
+    if user_input == 'done':
+        break
+    
+    num = int(user_input)
+
+    if num % 2 == 0:
+        total += num
+    else:
+        total -= num
+    
+print(total)
