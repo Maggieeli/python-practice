@@ -29,6 +29,7 @@ print(total)
 total = 0
 
 while True:
+# not a int because "done" is not an integer 
     user_input = input("Enter a number, type 'done' to stop:")
     
     if user_input == 'done':
