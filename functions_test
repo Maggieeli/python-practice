@@ -1,0 +1,45 @@
+
+Width = 640
+
+def turn_camera(object_location):
+  MID_POINT = 320
+  deadzone_left = MID_POINT - 50
+  deadzone_right = MID_POINT + 50
+  # out of range
+  if object_location > Width:
+      return('Invalid, try again')
+  elif object_location < 0:
+      return('Invalid, try again')
+  # within range
+  elif object_location < deadzone_left:
+      return(-1)
+  elif object_location > deadzone_right:
+      return(1)
+  # inside the deadzone
+  else:
+      return(0)
+
+def test():
+   assert turn_camera(200) == -1, "Should move camera left when object at 200px"
+   assert turn_camera(370) == 0, "Should not move camera"
+   assert turn_camera(600) == 1, "Should move camera right when object at 600px"
+   assert turn_camera(800) == 'Invalid, try again', "Out of range"
+   assert turn_camera(-1) == 'Invalid, try again', "Out of range"
+   print("Passed all tests!")
+
+
+def main():
+   print("Welcome to the Turning Camera")
+   object_location = int(input("Enter the location of the object:"))
+   turn = turn_camera(object_location)
+   if turn == 'Invalid, try again':
+       print(turn)
+   elif turn == 1:
+       print("The camera needs to turn {} to the right.".format(turn))
+   elif turn == -1:
+       print("The camera needs to turn {} to the left.".format(turn))
+   elif turn == 0:
+       print('The camera does not need to move.')
+
+#test()
+main()
