@@ -1,0 +1,33 @@
+weekly_temps = []
+
+def getTemp():
+    while len(weekly_temps) < 7:
+        temp = int(input("Enter the temperatures for the week: "))
+        weekly_temps.append(temp)
+    return(weekly_temps)
+
+def getAverage():
+    average = sum(weekly_temps)/len(weekly_temps)
+    print("The average weather is", average)
+
+def hightemp():
+    high = weekly_temps[0]
+    for temp in weekly_temps:
+        if high < temp:
+            high = temp
+    print("The high will be", high)
+
+def lowtemp():
+    low = weekly_temps[0]
+    for temp in weekly_temps:
+        if low > temp:
+            low = temp
+    print('The low will be', low)
+
+def main():
+    getTemp()
+    getAverage()
+    hightemp()
+    lowtemp()
+
+main()
